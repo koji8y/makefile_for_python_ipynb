@@ -9,6 +9,7 @@ Makefile for python and jupyter notebook.
         - NO_TYPECHECK
         - ADDITIONAL_TOP_TO_FIND_SRC
     - Otherwise, add lines `name=value`.
+1. Create `requirements.txt` that lists python packages to be installed.
 
 # Tragets
 - help
