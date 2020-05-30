@@ -38,6 +38,9 @@ help_core:
 	@echo "Tragets:"
 	@cat Makefile mk/util.mk | awk -F: '/^[A-Za-z][^=:]*:/ {print $$1}' | sed -e 's/^/ - /'
 
+help: help_core
+	@true
+
 env:
 	@case "${VIRTUAL_ENV}" in \
 	  */${ENV}) \
