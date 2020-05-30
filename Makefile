@@ -1,8 +1,6 @@
 include env.mk
 include mk/prepare.mk
-
-help: help_core
-	@true
+include local.mk
 
 %:
 	@$(MAKE) -f mk/util.mk $@

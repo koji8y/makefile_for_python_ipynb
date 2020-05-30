@@ -2,13 +2,14 @@ Makefile for python and jupyter notebook.
 ----
 # Preparation
 1. Copy `Makefile` and directory `mk` to your project top directory.
-1. Create file `env.mk` on the same directory as `Makefile`.
-    - The file can be empty if none of the following settings described in mk/util.mk are required.
+1. Create files `env.mk` and `local.mk` on the same directory as `Makefile`.
+    - The former file can be empty if none of the following settings described in mk/util.mk are required.
         - IPYNB_PORT
         - ENV_PROMPT
         - NO_TYPECHECK
         - ADDITIONAL_TOP_TO_FIND_SRC
     - Otherwise, add lines `name=value`.
+    - The latter file stores locally defined targets of make.
 1. Create `requirements.txt` that lists python packages to be installed.
 
 # Tragets
