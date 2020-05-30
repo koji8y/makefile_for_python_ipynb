@@ -88,6 +88,11 @@ prepare_pkg: _check_env _prepare_pkg_wo_check_env
 
 _prepare_pkg_wo_check_env: prepare_specific
 	@$(pip3) install --upgrade pip setuptools wheel pip-autoremove
+	@$(pip3) install --upgrade \
+		mypy \
+		flake8 \
+		pylint \
+		debtcollector
 	@${pip3} install --upgrade -r requirements.txt
 
 prepare_specific:
