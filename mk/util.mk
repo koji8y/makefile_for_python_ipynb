@@ -59,7 +59,7 @@ env:
 _check_env:
 	@case "${VIRTUAL_ENV}" in \
 	  */${ENV}) \
-		if ! python3 -m pip list --format columns | grep PyYAML > /dev/null; then \
+		if ! python3 -m pip list --format columns | grep pip-autoremove > /dev/null; then \
 			make _prepare_pkg_wo_check_env; \
 		fi; \
 		;; \
