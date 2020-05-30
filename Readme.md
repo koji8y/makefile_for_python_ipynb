@@ -10,6 +10,7 @@ Makefile for python and jupyter notebook.
         - ADDITIONAL_TOP_TO_FIND_SRC
     - Otherwise, add lines `name=value`.
     - The latter file stores locally defined targets of make.
+    - The latter file can be empty.
 1. Create `requirements.txt` that lists python packages to be installed.
 
 # Tragets
