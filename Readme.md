@@ -52,3 +52,9 @@ Makefile for python and jupyter notebook.
     - Terminate jupyter notebook if running, then restart it.
 - list_notebook
     - List processes running for jupyter notebook.
+- mkpkg
+    - Make python package module.
+- clean_pkg
+    - Remove work files created by mkpkg.
+- stub
+    - Make stub (*.pyi) of code files in ${STUB_TARGET} directories for mypy.

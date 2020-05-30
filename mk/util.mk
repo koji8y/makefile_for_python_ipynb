@@ -23,6 +23,11 @@ endif
 ifndef ADDITIONAL_TOP_TO_FIND_SRC
 ADDITIONAL_TOP_TO_FIND_SRC=
 endif
+# STUB_TARGET: str - Space separated directories of *.py files
+#                    for which  to generate stub (*.pyi).
+ifndef STUB_TARGET
+STUB_TARGET=
+endif
 
 FLAKE_OPT=--ignore=E101,E111,E121,E123,E126,E127,E128,E129,E201,E202,E203,E211,E214,E221,E222,E225,E226,E231,E241,E251,E261,E262,E265,E266,E271,E272,E301,E302,E303,E305,E306,E501,E701,E704,E722,E741,F401,F841,H101,H306,H403,H405,W191,W291,W293,W391,W503,W504
 
@@ -168,3 +173,14 @@ reopen_notebook: restart_notebook
 
 list_notebook: _check_env
 	jupyter-notebook list
+
+mkpkg: _check_env clean_pkg stub
+	@python3 -m setup bdist_wheel
+
+clean_pkg: _check_env
+	@rm -rf *.egg-info build
+
+stub: _check_env
+	@find  glasut -name "*.pyi" -exec rm -f {} \;
+	@rm -f *.pyi
+	@stubgen -o . ${STUB_TARGET}
