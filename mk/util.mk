@@ -189,6 +189,14 @@ clean_pkg: _check_env
 	@rm -rf *.egg-info build
 
 stub: _check_env
-	@find  glasut -name "*.pyi" -exec rm -f {} \;
+	@if test -z "${STUB_TARGET}"; then \
+		echo "No STUB_TARGET folder is specified."; \
+		exit 1; \
+	fi
+	@for d in ${STUB_TARGET}; do if ! test -d "$${d}"; then \
+		echo "No such directory $$d"; \
+		exit 1; \
+	fi; done
+	@find ${STUB_TARGET} -name "*.pyi" -exec rm -f {} \;
 	@rm -f *.pyi
 	@stubgen -o . ${STUB_TARGET}
