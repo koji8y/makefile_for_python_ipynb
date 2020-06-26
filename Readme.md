@@ -13,7 +13,7 @@ Makefile for python and jupyter notebook.
     - The latter file can be empty.
 1. Create `requirements.txt` that lists python packages to be installed.
 
-# Tragets
+# Targets
 - help
     - Show all the targets to make.
 - env_test
@@ -27,6 +27,8 @@ Makefile for python and jupyter notebook.
 - check_wellformed
     - Check code using flake (only for critical check items) and mypy.
 - check_quality
+    - Check code using flake, mypy, and pylint.
+        - Order: flake (critical check items), mypy, pylint, flake (full)
 - flake_core
     - Check code using flake only for critical check items.
 - flake
